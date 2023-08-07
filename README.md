@@ -32,3 +32,20 @@ const fahrzeugData = {
     oeltemperatur: 0, // in °C
     motortemperatur: 0, // in °C
 };
+function generiereRennfahrerData() {
+    rennfahrerData.geschwindigkeit = Math.floor(Math.random() * (320 - 50 + 1)) + 50; // 50km/h bis 320km/h
+    rennfahrerData.herzfrequenz = Math.floor(Math.random() * (180 - 60 + 1)) + 60; // 60BPM bis 180BPM
+    // Rundenzeit kann komplexer sein, daher lassen wir es vorerst so
+}
+
+function generiereWetterData() {
+    wetterData.temperatur = Math.floor(Math.random() * (35 - (-5) + 1)) - 5; // -5°C bis 35°C
+    wetterData.luftfeuchtigkeit = Math.floor(Math.random() * 100); // 0% bis 100%
+    wetterData.windgeschwindigkeit = Math.floor(Math.random() * 20); // 0km/h bis 20km/h
+    const zustaende = ["sonnig", "bewölkt", "regnerisch"];
+    wetterData.wetterzustand = zustaende[Math.floor(Math.random() * zustaende.length)];
+}
+
+// Ähnliche Funktionen können für `streckeData`, `reifenData` und `fahrzeugData` erstellt werden.
+
+
